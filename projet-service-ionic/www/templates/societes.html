@@ -1,0 +1,14 @@
+<ion-view view-title="Societes">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item item-avatar" ng-repeat="s in societes" ng-click="getSociete(s.code)">
+                <h3>{{s.code}}</h3>
+                <h3>{{s.nom}}</h3>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                ng-if="moreDataCanBeLoaded"
+                on-infinite="loadMore()">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

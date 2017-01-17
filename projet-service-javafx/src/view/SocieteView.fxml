@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SocieteController">
+   <top>
+      <Label text="Projet Bource Societe" textFill="#300c94" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font></Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.39464882943143814" layoutX="200.0" layoutY="82.0" prefHeight="349.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView id="tableSociete" fx:id="tableSocietes" layoutX="17.0" layoutY="57.0" prefHeight="347.0" prefWidth="233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn id="colCode" fx:id="colCode" prefWidth="75.0" text="Code" />
+                            <TableColumn id="colNom" fx:id="colNom" prefWidth="75.0" text="Nom" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <BorderPane layoutX="66.0" layoutY="32.0" prefHeight="347.0" prefWidth="359.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <Label text="Societe Details" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                           <center>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="  Code de societe :" />
+                                    <Label text="  Nom de societe :" GridPane.rowIndex="1" />
+                                    <Label text="  Le total des actions en vente :" GridPane.rowIndex="2" />
+                                    <Label text="  Le total des actions en achat :" GridPane.rowIndex="3" />
+                                    <Label text="  La moyenne des prix en vente :" GridPane.rowIndex="4" />
+                                    <Label text="  La moyenne des prix en achat :" GridPane.rowIndex="5" />
+                                    <Label text="  L'estimation du prix de l'action :" GridPane.rowIndex="6" />
+                                    <Label id="txtCode" fx:id="txtCode" text="..." GridPane.columnIndex="1" />
+                                    <Label id="txtNom" fx:id="txtNom" text="..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label id="txtTotalVente" fx:id="txtTotalVente" text="..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label id="txtTotalAchat" fx:id="txtTotalAchat" text="..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label id="txtPrixVente" fx:id="txtPrixVente" text="..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label id="txtPrixAchat" fx:id="txtPrixAchat" text="..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label id="txtPrixEstm" fx:id="txtPrixEstm" text="..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <Button id="btnOrdres" fx:id="btnOrdres" mnemonicParsing="false" onAction="#showOrdres" text="Afficher les ordres" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

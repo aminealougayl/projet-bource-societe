@@ -1,0 +1,46 @@
+<div class="container">
+	<h4 class="text-center">Liste des societes cote en bource</h4>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-left">
+				<form>
+					<!-- label>Mot Cle:</label-->
+					<input placeholder=" Mot cle ..."  type="text" ng-model="motCle">
+					<button ng-click="search()">Chercher</button>
+				</form>
+			</div>
+			
+			<div class="col-sm-offset-3 col-sm-3 left">
+				<form>
+					<input placeholder=" Code societe ..."  type="text" ng-model="ScCode">
+					<button ng-click="view()">GO!</button>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="container spacer">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+				</tr>
+			</thead>
+			<tbody> 
+				<tr ng-repeat="s in societes">
+					<td>{{s.nom}} &nbsp; <a  href="#/societes/{{s.code}}" class="btn"> &nbsp; Details</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container" >
+		<ul class="nav nav-pills">
+			<li ng-class="{active:$index==pageCourante}" 
+				class="clickable" ng-repeat="p in pages track by $index">
+			<a ng-click="gotoPage($index)">{{$index+1}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

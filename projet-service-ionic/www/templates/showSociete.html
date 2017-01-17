@@ -1,0 +1,19 @@
+<ion-view view-title="{{societe.nom}}">
+    <ion-content class="padding">
+        <div class="padding">
+            <label class="item-floating-label">Code : {{societe.code}}</label>
+            <label class="item-floating-label">Nom : {{societe.nom}}</label>
+        </div>
+        <ion-list>
+            <ion-item class="item item-avatar" ng-repeat="o in ordres">
+                <h3>Date : {{o.date*1000|date:'EEEE dd-MM-yy HH:mm'}}</h3>
+                <h3>Nombre d'actions : {{o.nbreAction}}</h3>
+                <h3>Prix d'action : {{o.prixAction}}</h3>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                ng-if="moreDataCanBeLoaded"
+                on-infinite="loadMore()">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="container">
+		<br/>
+		<div class="row">
+			<div class="col-sm-2">Code de societe : </div>
+			<div class="col-sm-2">{{societe.code}}</div>
+			<div class="col-sm-offset-3 col-sm-3">Le total des actions en vente : </div>
+			<div class="col-sm-2 ">{{totalVentes}}</div>	
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-sm-2">Nom de societe  : </div>
+			<div class="col-sm-2">{{societe.nom}}</div>
+			<div class="col-sm-offset-3 col-sm-3">Le total des actions en achat : </div>
+			<div class="col-sm-2 ">{{totalAchats}}</div>
+		</div>
+		<div class="row spacer">
+			<div class="col-sm-offset-5 col-sm-2">
+				<a href="#!/societes" class="btn btn-default">
+					<i class="glyphicon glyphicon-arrow-left"></i>&nbsp;Retour</a>
+			</div>
+		</div>
+	</div>
+	
+	<h3 class="text-center">Liste des ordres de la societe <strong >{{societe.nom}}</strong> </h3>
+	<div class="container spacer">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Date</th><th>Nombre des actions</th><th>Prix d'action</th>
+				</tr>
+			</thead>
+			<tbody> 
+				<tr ng-repeat="o in ordres">
+					<td>{{o.date | date}}</td>
+					<td>{{o.nbreAction}}</td>
+					<td>{{o.prixAction}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li ng-class="{active:$index==pageCourante}" 
+				class="clickable" ng-repeat="p in pages track by $index">
+			<a ng-click="gotoPage($index)">{{$index+1}}</a>
+			</li>
+		</ul>
+	</div>
+	
+</div>
